@@ -1,0 +1,13 @@
+C:\Users\Kyogiro\source\repos\VideoMaker\Cloudnary\bin\Debug\net8.0\Cloudnary.deps.json
+C:\Users\Kyogiro\source\repos\VideoMaker\Cloudnary\bin\Debug\net8.0\Cloudnary.dll
+C:\Users\Kyogiro\source\repos\VideoMaker\Cloudnary\bin\Debug\net8.0\Cloudnary.pdb
+C:\Users\Kyogiro\source\repos\VideoMaker\Cloudnary\obj\Debug\net8.0\Cloudnary.csproj.AssemblyReference.cache
+C:\Users\Kyogiro\source\repos\VideoMaker\Cloudnary\obj\Debug\net8.0\Cloudnary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kyogiro\source\repos\VideoMaker\Cloudnary\obj\Debug\net8.0\Cloudnary.AssemblyInfoInputs.cache
+C:\Users\Kyogiro\source\repos\VideoMaker\Cloudnary\obj\Debug\net8.0\Cloudnary.AssemblyInfo.cs
+C:\Users\Kyogiro\source\repos\VideoMaker\Cloudnary\obj\Debug\net8.0\Cloudnary.csproj.CoreCompileInputs.cache
+C:\Users\Kyogiro\source\repos\VideoMaker\Cloudnary\obj\Debug\net8.0\Cloudnary.sourcelink.json
+C:\Users\Kyogiro\source\repos\VideoMaker\Cloudnary\obj\Debug\net8.0\Cloudnary.dll
+C:\Users\Kyogiro\source\repos\VideoMaker\Cloudnary\obj\Debug\net8.0\refint\Cloudnary.dll
+C:\Users\Kyogiro\source\repos\VideoMaker\Cloudnary\obj\Debug\net8.0\Cloudnary.pdb
+C:\Users\Kyogiro\source\repos\VideoMaker\Cloudnary\obj\Debug\net8.0\ref\Cloudnary.dll
