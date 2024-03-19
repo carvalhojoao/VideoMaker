@@ -15,7 +15,7 @@ namespace Cloudnary.BLs
         {
             var cloudName = configuration.GetSection("AppSettings:cloudName").Value;
             var cloudApiKey = configuration.GetSection("AppSettings:cloudApiKey").Value;
-            var cloudApiSecret = configuration.GetSection("AppSettings:cloudApiSecret").Value; 
+            var cloudApiSecret = configuration.GetSection("AppSettings:cloudApiSecret").Value;
             Account account = new Account(cloudName, cloudApiKey, cloudApiSecret);
 
             _cloudinary = new Cloudinary(account);
@@ -28,9 +28,15 @@ namespace Cloudnary.BLs
             {
                 var uploadParams = new VideoUploadParams
                 {
+                    EagerAsync = true,
                     File = new FileDescription(name, file),
                     PublicId = name,
-                    //Transformation = new Transformation();
+                    Transformation = new Transformation()
+                      .Background("blurred:2000:0").Height(1920).Width(1080).Crop("pad").Chain()
+                      .Duration("60").StartOffset("0").Chain()
+                      .Effect("saturation:25").Chain()
+                      .Effect("contrast:15").Chain()
+                      .FetchFormat("mp4")
                 };
 
                 var result = await _cloudinary.UploadAsync(uploadParams);
@@ -47,4 +53,3 @@ namespace Cloudnary.BLs
         //cloudinary.Api.UrlVideoUp.Transform(new Transformation().Background("blurred:2000:0").Height(1920).Width(1080).Crop("pad")).BuildVideoTag("samples/cld-sample-video")
     }
 }
- 

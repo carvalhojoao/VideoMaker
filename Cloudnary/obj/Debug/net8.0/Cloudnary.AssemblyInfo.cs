@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Cloudnary")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+687433e16a2443ad91189fa9999c5e8af827c87c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+88c3d6f0fa17db483e8798cef8946db793297e17")]
 [assembly: System.Reflection.AssemblyProductAttribute("Cloudnary")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Cloudnary")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -50,6 +50,8 @@ $('#tranformVideos').click(function () {
         return;
     }
 
+    //fazer enviar de 1 em 1
+
     $.ajax({
         url: '/Video/TransformVideos',
         type: "POST",

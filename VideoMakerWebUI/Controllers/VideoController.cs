@@ -19,15 +19,11 @@ namespace VideoMaker.Controllers
         }
 
         [HttpPost]
-        [RequestSizeLimit(1024 * 1024 * 1024)]
-        public async Task<IActionResult> TransformVideos(List<IFormFile> files)
+        [RequestSizeLimit(40000000)]
+        public async Task<IActionResult> TransformVideos(IFormFile file)
         {
-            foreach (var file in files)
-            {
-                Stream videoStream = file.OpenReadStream();
-                await _blCloudnary.UploadVideo(file.FileName.Split('.')[0], videoStream);
-            }
-
+            Stream videoStream = file.OpenReadStream();
+            await _blCloudnary.UploadVideo(file.FileName.Split('.')[0], videoStream);
             return Json(new { files = "ok" });
         }
     }
