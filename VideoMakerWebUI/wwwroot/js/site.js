@@ -5,24 +5,24 @@
 });
 
 
-myDropzone.on("addedfile", function (file) {
-    $("#startUpload").click(function () {
-        myDropzone.enqueueFile(file)
-    });
-})
+//myDropzone.on("addedfile", function (file) {
+//    $("#startUpload").click(function () {
+//        myDropzone.enqueueFile(file)
+//    });
+//})
 
-myDropzone.on("totaluploadprogress", function (progress) {
-    document.querySelector("#total-progress .progress-bar").style.width = progress + "%"
-})
+//myDropzone.on("totaluploadprogress", function (progress) {
+//    document.querySelector("#total-progress .progress-bar").style.width = progress + "%"
+//})
 
-myDropzone.on("sending", function (file) {
-    document.querySelector("#total-progress").style.opacity = "1"
-    //$("#startUpload").attr("disabled", "disabled")
-})
+//myDropzone.on("sending", function (file) {
+//    document.querySelector("#total-progress").style.opacity = "1"
+//    //$("#startUpload").attr("disabled", "disabled")
+//})
 
-myDropzone.on("queuecomplete", function (progress) {
-    document.querySelector("#total-progress").style.opacity = "0"
-})
+//myDropzone.on("queuecomplete", function (progress) {
+//    document.querySelector("#total-progress").style.opacity = "0"
+//})
 
 //$('#startUpload').click(function () {
 //    myDropzone.enqueueFiles(myDropzone.getFilesWithStatus(Dropzone.ADDED));
@@ -57,7 +57,20 @@ $('#tranformVideos').click(function () {
         type: "POST",
         data: formData,
         contentType: false,
-        processData: false
+        processData: false,
+        xhr: function () {
+            var xhr = new window.XMLHttpRequest();
+            xhr.upload.addEventListener('progress', function (evt) {
+                if (evt.lengthComputable) {
+                    var percentComplete = (evt.loaded / evt.total) * 100;
+                    $('#total-progress .progress-bar').width(percentComplete + "%");
+                    $("#total-progress").css({ 'opacity': 1 });
+                    //$('#progressBar').css('width', percentComplete + '%');
+                    //$('#progressBarText').text(percentComplete.toFixed(2) + '%');
+                }
+            }, false);
+            return xhr;
+        }
     }).done(function (response) {
         if (response.files == 'ok') {
             alert('ok');

@@ -29,16 +29,17 @@ namespace Cloudnary.BLs
                 var uploadParams = new VideoUploadParams
                 {
                     EagerAsync = true,
-                    File = new FileDescription(name, file),
-                    PublicId = name,
+                    File = new FileDescription(name + "_TikTok", file),
+                    PublicId = name + "_TikTok",
                     Transformation = new Transformation()
                       .Background("blurred:2000:0").Height(1920).Width(1080).Crop("pad").Chain()
                       .Duration("60").StartOffset("0").Chain()
                       .Effect("saturation:25").Chain()
                       .Effect("contrast:15").Chain()
                       .FetchFormat("mp4")
-                };
+                }; 
 
+                _cloudinary.Api.Timeout = 60000;
                 var result = await _cloudinary.UploadAsync(uploadParams);
                 Console.WriteLine(result.Url);
             }
